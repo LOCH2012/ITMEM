@@ -1,0 +1,9 @@
+#!/bin/bash
+for pid in $(ps -Ao pid | awk '$1!=PID{print $1}')
+do
+powpid=$(grep -Ehsi "^PPid" /proc/$pid/status | grep -o "[0-9]\+")
+timework=$(grep -Ehsi "sum_exec_runtime" /proc/$pid/sched | grep -o "[0-9]\+")
+switches=$(grep -Ehsi "nr_switches" /proc/$pid/sched | grep -o "[0-9]")
+pic=("$timework"/"$swithces")
+echo "$pid $powpid $pic"
+done | awk '$2!="" {print"ProcessID="$1 " : " "Parent_ProcessID="$2 " : " "Average_Running_Time="$3}' | sort --key=2 -V > file4

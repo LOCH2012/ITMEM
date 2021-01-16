@@ -1,0 +1,16 @@
+#!/bin/bash
+
+str=""
+
+read x
+
+if [ "$x" == q ]
+then 
+echo "String not found"
+exit
+fi
+
+while [ "$x" != q ]
+do str = str + $a
+done
+echo $str

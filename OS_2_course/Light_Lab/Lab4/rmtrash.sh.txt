@@ -1,0 +1,30 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; 
+   then
+       echo "Mistake"
+       exit
+fi
+
+if [[ !(-f "./$1") ]]; 
+   then
+       echo "Files not found"
+       exit
+fi
+
+if [[ !(-d  ~/.trash) ]]; 
+   then
+       mkdir ~/.trash
+fi
+
+title=0
+
+p="$(pwd "$1")/"$1""
+
+while [ -f ~/.trash/$name ] ; do
+        let "title=+1"
+done
+
+ln "$p" ~/.trash/$title
+rm "./$1"
+echo "Filed: "$p"; title: $title" >> ~/.trash.log

@@ -1,0 +1,19 @@
+#!/bin/bash
+echo "If you want to use: Links, print 1; Nano, print 2; Vi, print 3; Exit, print 4"
+read variant
+if [[ $variant -ne 1 ]]
+then if [[ $variant -ne 2 ]]
+     then if [[ $variant -ne 3 ]]
+          then if [[ $variant -ne 4 ]]
+               then echo "Incorrect arguements"
+
+case $variant in 
+1)
+/usr/bin/links ;;
+2) 
+/usr/bin/nano ;;
+3) 
+/usr/bin/vi ;;
+4) echo "EXIT"
+exit 0 ;;
+esac

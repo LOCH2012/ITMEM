@@ -1,0 +1,29 @@
+#!/bin/bash
+
+lebel=~\report2.log
+rm report.log
+
+cnts=0
+
+array=()
+
+arrayin=0
+
+while true
+do
+  	for (( count=0; count<10; count++ ))
+        do
+          	array[$arrayin]=$count
+                arrayin=$((arrayin+1))
+        done
+
+	cnts=$((cnts+1))
+        membr=$cnts%100000
+
+        if [[ $membr -le "0" ]]
+        then if [[ $membr -ge "0" ]]
+             then
+            		echo "${#array[*]}">>lebel
+             fi
+        fi
+done

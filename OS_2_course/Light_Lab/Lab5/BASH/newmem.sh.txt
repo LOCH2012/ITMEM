@@ -1,0 +1,22 @@
+#!/bin/bash
+
+array=()
+
+arrayin=0
+
+while true
+do
+  	for (( count=0; count<10; count++ ))
+        do
+          	array[$arrayin]=$count
+                arrayin=$((arrayin+1))
+        done
+
+	if [[ "${#array[*]}" -gt "$1" ]]
+        then
+            	echo "STOP"
+                break
+        fi
+done
+
+exit 0

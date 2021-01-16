@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo "Please, write 3 numbers: "
+
+read x y z 
+
+if [[ "$y" -lt "$x" ]]
+then if [[ "$z" -lt "$x" ]]
+then echo $x
+fi
+fi
+
+if [[ "$x" -lt "$y" ]]
+then if [["$z" -lt "$y" ]]
+then echo $x
+fi
+fi
+
+if [[ "$x" -lt "$z" ]]
+then if [[ "$y" -lt "$z" ]]
+then echo $x
+fi
+fi
