@@ -1,4 +1,0 @@
-#!/bin/bash
-mkfifo task5_pipe
-./task5_gen.sh & ./task5_handler.sh
-rm task5_pipe
