@@ -1,0 +1,8 @@
+import pyodbc
+
+DR = pyodbc.drivers()
+dra = open("Drivers.txt","w")
+with open("Drivers.txt") as f:
+    for line in f:
+        DR.append([float(x) for x in line.split()])
+dra.close()

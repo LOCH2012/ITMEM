@@ -1,0 +1,28 @@
+import os
+
+if not os.path.isdir("c://Lab6"):
+     os.mkdir("c://Lab6")
+namen = os.unamen()
+
+version = open("version.txt", "w")
+version.write("namen")
+version.close()
+os.replace("version.txt", "c://Lab6/version.txt")
+
+
+import psutil
+Amem = (psutil.cpu_percent())
+Wmem = (psutil.virtual_memory())  
+tim = open("time.txt", "w")
+tim.write("Amem")
+tim.write("Wmem")
+tim.close()
+os.replace("time.txt", "c://Lab6/time.txt")
+
+if not os.path.isdir("c://Lab6/TEST"):
+     os.mkdir("c://Lab6/TEST")
+from distutils.dir_util import copy_tree
+fromDirectory = "c://Lab6"
+toDirectory = "c://TEST"
+copy_tree(fromDirectory, toDirectory)
+os.remove("c://Lab6")

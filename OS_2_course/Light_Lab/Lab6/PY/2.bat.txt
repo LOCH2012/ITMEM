@@ -1,0 +1,5 @@
+net use \\VITAON-PC\temp
+schtasks /Create /TN LAB6 /TR "C:\LAB6\copy.bat" /sc minute /mo 1
+schtasks /Delete /TN LAB6
+cmd /c "fc C:\Windows\Marx-CommunistManifesto.pdf \\VITAON-PC\temp\Marx-CommunistManifesto.pdf"
+cmd /c "fc C:\Windows\explorer.exe \\VITAON-PC\temp\explorer.exe"
