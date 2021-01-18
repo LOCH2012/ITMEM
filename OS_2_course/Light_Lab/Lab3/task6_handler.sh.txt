@@ -1,0 +1,39 @@
+#!/bin/bash
+
+echo $$ > .pid
+num=1
+currop=""
+
+EXIT()
+{
+	echo "Exit"
+	exit 0
+}
+
+PLUS()
+{
+	currop="+"
+}
+
+MULTI()
+{
+	currop="*"
+}
+
+trap 'EXIT' SIGTERM
+trap 'PLUS' USR1
+trap 'MULTI' USR2
+
+while true;
+do
+	case "$currop" in
+		"+")
+			num=$((number + 2))
+		;;
+		"*")
+			num=$((number * 2))
+		;;
+	esac
+	echo $num
+	sleep 1
+done
